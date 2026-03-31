@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Délices de Coura National — Thiès, Sénégal</title>
+    <meta name="description" content="Restaurant et service traiteur à Thiès, Sénégal. Savourez nos délices : fast food, pizzas, brochettes, desserts et bien plus. Parcelle U2, Thiès.">
+    <meta name="keywords" content="restaurant Thiès, traiteur Thiès, Les Délices de Coura, fast food Thiès, pizza Thiès, restaurant Sénégal">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Les Délices de Coura National">
+    <meta property="og:description" content="Restaurant & Traiteur à Thiès, Sénégal — Saveurs authentiques, moments inoubliables">
+    <meta property="og:type" content="restaurant">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Les Délices de Coura National",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Parcelle U2",
+        "addressLocality": "Thiès",
+        "addressCountry": "SN"
+      },
+      "telephone": "+221778837014",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 14.770080,
+        "longitude": -16.927515
+      },
+      "servesCuisine": ["Sénégalaise", "Fast Food", "Pizza", "Traiteur"]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --rose: #C8748A;
+            --rose-light: #F2D0D8;
+            --rose-pale: #FDF0F3;
+            --gold: #C9963A;
+            --gold-light: #F0D080;
+            --dark: #1A1020;
+            --charcoal: #3A3040;
+            --cream: #FDF8F2;
+            --gray: #998899;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(253, 248, 242, 0.93);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(201, 150, 58, 0.18);
+            padding: 0 2.5rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            color: var(--rose);
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            line-height: 1.2;
+        }
+
+        .nav-logo small {
+            display: block;
+            font-size: 0.6rem;
+            color: var(--gold);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--rose); }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-toggle {
+            display: flex;
+            background: var(--rose-light);
+            border-radius: 20px;
+            padding: 3px;
+        }
+
+        .lang-btn {
+            padding: 4px 14px;
+            border: none;
+            border-radius: 16px;
+            background: transparent;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            cursor: pointer;
+            color: var(--gray);
+            letter-spacing: 0.05em;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: var(--rose);
+            color: white;
+        }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nav-hamburger span {
+            width: 22px; height: 2px;
+            background: var(--charcoal);
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px; left: 0; right: 0;
+            background: rgba(253,248,242,0.98);
+            backdrop-filter: blur(14px);
+            padding: 1.5rem 2rem;
+            flex-direction: column;
+            gap: 1.2rem;
+            z-index: 99;
+            border-bottom: 1px solid rgba(201,150,58,0.15);
+        }
+
+        .mobile-menu.open { display: flex; }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(140deg, #120810 0%, #2A1520 45%, #1A0F20 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 15% 55%, rgba(200, 116, 138, 0.28) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 25%, rgba(201, 150, 58, 0.18) 0%, transparent 50%),
+                radial-gradient(ellipse at 55% 85%, rgba(200, 116, 138, 0.12) 0%, transparent 45%);
+            animation: bgPulse 9s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgPulse {
+            from { opacity: 0.75; }
+            to   { opacity: 1; }
+        }
+
+        .hero-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(201, 150, 58, 0.12);
+            top: 50%; left: 50%;
+        }
+
+        .hero-ring:nth-child(1) {
+            width: 700px; height: 700px;
+            transform: translate(-50%, -50%);
+            animation: spin 40s linear infinite;
+        }
+
+        .hero-ring:nth-child(2) {
+            width: 450px; height: 450px;
+            transform: translate(-50%, -50%);
+            border-color: rgba(200,116,138,0.18);
+            animation: spin 25s linear infinite reverse;
+        }
+
+        .hero-ring:nth-child(3) {
+            width: 200px; height: 200px;
+            transform: translate(-50%, -50%);
+            border-color: rgba(201, 150, 58, 0.25);
+            animation: spin 15s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to   { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.8rem;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 0.3s;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 9vw, 6rem);
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 0.4rem;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 0.55s;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--rose);
+        }
+
+        .hero-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 0.75s;
+        }
+
+        .hero-wolof {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 0.9s;
+        }
+
+        .hero-location {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 1s;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            margin: 0 auto 2.5rem;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 1.05s;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 1.15s;
+        }
+
+        .btn-primary {
+            padding: 0.9rem 2.2rem;
+            background: linear-gradient(135deg, var(--rose), #A0506A);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 0.88rem;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 24px rgba(200, 116, 138, 0.45);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(200, 116, 138, 0.55);
+        }
+
+        .btn-ghost {
+            padding: 0.9rem 2.2rem;
+            background: transparent;
+            color: rgba(255,255,255,0.85);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 50px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .hero-wa {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 0.7rem 1.4rem;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            opacity: 0;
+            animation: fadeUp 0.9s ease forwards 1.35s;
+        }
+
+        .hero-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SECTIONS ===== */
+        section { padding: 5.5rem 2rem; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-label {
+            display: block;
+            font-size: 0.72rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.9rem, 5vw, 2.9rem);
+            color: var(--dark);
+            line-height: 1.15;
+        }
+
+        .section-title em {
+            color: var(--rose);
+            font-style: italic;
+        }
+
+        .section-line {
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, var(--rose), var(--gold));
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* ===== MENU ===== */
+        #menu { background: white; }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            padding: 0.55rem 1.4rem;
+            border: 1.5px solid var(--rose-light);
+            border-radius: 50px;
+            background: transparent;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.2s;
+            letter-spacing: 0.03em;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--rose);
+            border-color: var(--rose);
+            color: white;
+        }
+
+        .menu-panel { display: none; }
+        .menu-panel.active { display: block; }
+
+        .pizza-note {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.78rem;
+            color: var(--gray);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 0.85rem;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.95rem 1.2rem;
+            border-radius: 12px;
+            background: var(--rose-pale);
+            border: 1px solid rgba(200,116,138,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px rgba(200,116,138,0.14);
+        }
+
+        .menu-item-name {
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--charcoal);
+        }
+
+        .menu-item-price {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--rose);
+            font-size: 0.92rem;
+            white-space: nowrap;
+            margin-left: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== GALERIE ===== */
+        #galerie { background: var(--cream); }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 180px;
+            transition: transform 0.45s ease;
+            display: block;
+        }
+
+        .gallery-item:hover img { transform: scale(1.06); }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,10,16,0.65), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.2rem;
+        }
+
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        .gallery-overlay span {
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        /* ===== CONTACT ===== */
+        #contact { background: white; }
+
+        .contact-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            max-width: 920px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.1rem 1.3rem;
+            border-radius: 14px;
+            background: var(--rose-pale);
+            border: 1px solid rgba(200,116,138,0.08);
+        }
+
+        .contact-icon {
+            width: 42px; height: 42px;
+            border-radius: 11px;
+            background: linear-gradient(135deg, var(--rose), #A0506A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-label {
+            font-size: 0.68rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-value {
+            font-weight: 700;
+            color: var(--charcoal);
+            font-size: 0.92rem;
+        }
+
+        .contact-value a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .wa-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 1rem 1.5rem;
+            background: #25D366;
+            color: white;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 5px 18px rgba(37,211,102,0.3);
+        }
+
+        .wa-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(37,211,102,0.42);
+        }
+
+        .contact-map {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 340px;
+            border: none;
+            display: block;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.45);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+        }
+
+        footer strong { color: var(--rose); }
+        footer .gold { color: var(--gold); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav { padding: 0 1.2rem; }
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+
+            section { padding: 4rem 1.2rem; }
+
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+
+            .contact-wrap { grid-template-columns: 1fr; }
+
+            .hero-wa { bottom: 1rem; right: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+    <div class="nav-logo">
+        Les Délices de Coura
+        <small data-fr="Restaurant & Traiteur" data-wo="Restoran ak Traiteur">Restaurant & Traiteur</small>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#menu" data-fr="Menu" data-wo="Lekku Bët">Menu</a></li>
+        <li><a href="#galerie" data-fr="Galerie" data-wo="Xët Yi">Galerie</a></li>
+        <li><a href="#contact" data-fr="Contact" data-wo="Yóbbu">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <div class="lang-toggle">
+            <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+            <button class="lang-btn" onclick="setLang('wo')">WO</button>
+        </div>
+        <div class="nav-hamburger" onclick="toggleMobile()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#menu" onclick="toggleMobile()" data-fr="Menu" data-wo="Lekku Bët">Menu</a>
+    <a href="#galerie" onclick="toggleMobile()" data-fr="Galerie" data-wo="Xët Yi">Galerie</a>
+    <a href="#contact" onclick="toggleMobile()" data-fr="Contact" data-wo="Yóbbu">Contact</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="accueil">
+    <div class="hero-bg"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+
+    <div class="hero-content">
+        <p class="hero-eyebrow" data-fr="Thiès, Sénégal · Parcelle U2" data-wo="Thiès, Sénégal · Parcelle U2">Thiès, Sénégal · Parcelle U2</p>
+
+        <h1 class="hero-title">
+            Les <em>Délices</em><br>de Coura
+        </h1>
+
+        <p class="hero-name">National</p>
+
+        <p class="hero-wolof" data-fr="Saveurs authentiques, moments inoubliables" data-wo="Dalal ak Jamm — Lekk bu neex">Saveurs authentiques, moments inoubliables</p>
+
+        <p class="hero-location" data-fr="Restaurant & Service Traiteur" data-wo="Restoran ak Traiteur">Restaurant & Service Traiteur</p>
+
+        <div class="hero-divider"></div>
+
+        <div class="hero-ctas">
+            <a href="#menu" class="btn-primary" data-fr="Voir le menu" data-wo="Xool lekku bët">Voir le menu</a>
+            <a href="#contact" class="btn-ghost" data-fr="Nous trouver" data-wo="Dem ci suuf">Nous trouver</a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/221778837014" class="hero-wa" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <span data-fr="Réserver" data-wo="Dugal sa tur">Réserver</span>
+    </a>
+</section>
+
+<!-- ===== MENU ===== -->
+<section id="menu">
+    <div class="section-header">
+        <span class="section-label" data-fr="Ce que nous proposons" data-wo="Lañuy jënd ci yëen">Ce que nous proposons</span>
+        <h2 class="section-title" data-fr="Notre <em>Menu</em>" data-wo="Lekku <em>Bët</em> bi">Notre <em>Menu</em></h2>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="menu-tabs">
+        <button class="tab-btn active" onclick="showTab(event,'fastfood')" data-fr="Fast Food" data-wo="Fast Food">Fast Food</button>
+        <button class="tab-btn" onclick="showTab(event,'dejeuner')" data-fr="Petit Déjeuner" data-wo="Lekk Suba">Petit Déjeuner</button>
+        <button class="tab-btn" onclick="showTab(event,'pizzas')" data-fr="Pizzas" data-wo="Pizzas">Pizzas</button>
+        <button class="tab-btn" onclick="showTab(event,'brochettes')" data-fr="Brochettes" data-wo="Brochettes">Brochettes</button>
+        <button class="tab-btn" onclick="showTab(event,'desserts')" data-fr="Desserts" data-wo="Desserts">Desserts</button>
+        <button class="tab-btn" onclick="showTab(event,'cocktails')" data-fr="Cocktails" data-wo="Cocktails">Cocktails</button>
+    </div>
+
+    <!-- Fast Food -->
+    <div class="menu-panel active" id="panel-fastfood">
+        <div class="menu-grid">
+            <div class="menu-item"><span class="menu-item-name">Burger simple</span><span class="menu-item-price">1 500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Burger royal</span><span class="menu-item-price">2 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Burger pané</span><span class="menu-item-price">2 500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Sandwich viande</span><span class="menu-item-price">1 500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Sandwich viande fromage</span><span class="menu-item-price">2 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Tacos simple</span><span class="menu-item-price">3 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Tacos pané</span><span class="menu-item-price">3 500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Tacos gratiné</span><span class="menu-item-price">3 500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Tacos fruit de mer</span><span class="menu-item-price">3 500 – 4 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chawarma</span><span class="menu-item-price">1 500 – 2 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Norvégienne</span><span class="menu-item-price">2 500 – 3 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Pacha</span><span class="menu-item-price">2 500 – 3 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Fatay complet</span><span class="menu-item-price">1 000 – 1 500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Panini</span><span class="menu-item-price">2 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Panini poulet</span><span class="menu-item-price">2 500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Kefta</span><span class="menu-item-price">1 500 F</span></div>
+        </div>
+    </div>
+
+    <!-- Petit Déjeuner -->
+    <div class="menu-panel" id="panel-dejeuner">
+        <div class="menu-grid">
+            <div class="menu-item"><span class="menu-item-name">Café Expresso</span><span class="menu-item-price">800 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Expresso avec Lait</span><span class="menu-item-price">1 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Café court</span><span class="menu-item-price">300 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Café long</span><span class="menu-item-price">500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Café crème</span><span class="menu-item-price">500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chocolat PM</span><span class="menu-item-price">500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chocolat GM</span><span class="menu-item-price">1 300 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Thé simple</span><span class="menu-item-price">500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Thé au Lait</span><span class="menu-item-price">800 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Omelette simple</span><span class="menu-item-price">1 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Omelette jambon</span><span class="menu-item-price">1 400 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Omelette fromage</span><span class="menu-item-price">1 600 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Jambon fromage</span><span class="menu-item-price">500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Croissant</span><span class="menu-item-price">500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Pain chocolat</span><span class="menu-item-price">500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Pain raisin</span><span class="menu-item-price">500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Cake GM</span><span class="menu-item-price">2 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Cake PM</span><span class="menu-item-price">600 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Crêpe</span><span class="menu-item-price">500 F</span></div>
+        </div>
+    </div>
+
+    <!-- Pizzas -->
+    <div class="menu-panel" id="panel-pizzas">
+        <p class="pizza-note" data-fr="Tailles disponibles : Petite / Moyenne / Grande" data-wo="Ndaw / Dëkk / Mag">Tailles disponibles : Petite / Moyenne / Grande</p>
+        <div class="menu-grid">
+            <div class="menu-item"><span class="menu-item-name">Reine</span><span class="menu-item-price">2 500 / 3 500 / 4 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Marguerita</span><span class="menu-item-price">2 500 / 3 500 / 4 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Végétarienne</span><span class="menu-item-price">2 500 / 3 500 / 4 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Merguez</span><span class="menu-item-price">2 500 / 3 500 / 4 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Fermière</span><span class="menu-item-price">2 500 / 3 500 / 4 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Pizza Chawarma</span><span class="menu-item-price">2 500 / 3 500 / 4 000 F</span></div>
+        </div>
+    </div>
+
+    <!-- Brochettes -->
+    <div class="menu-panel" id="panel-brochettes">
+        <div class="menu-grid">
+            <div class="menu-item"><span class="menu-item-name">Assiette brochette filet</span><span class="menu-item-price">4 500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Assiette brochette kafta</span><span class="menu-item-price">4 500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Assiette brochette poulet</span><span class="menu-item-price">5 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Assiette Hot-dog</span><span class="menu-item-price">4 500 F</span></div>
+        </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="menu-panel" id="panel-desserts">
+        <div class="menu-grid">
+            <div class="menu-item"><span class="menu-item-name">Crêpe Nutella</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name">Crêpe Nutella banane</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name">Crêpe sucre</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name">Salade de fruit</span><span class="menu-item-price">—</span></div>
+            <div class="menu-item"><span class="menu-item-name">Banane split vanille</span><span class="menu-item-price">3 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Coupe Ali Baba</span><span class="menu-item-price">3 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Milkshake vanille</span><span class="menu-item-price">2 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Milkshake choco banane</span><span class="menu-item-price">2 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Milkshake fraise banane</span><span class="menu-item-price">2 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Milkshake vanille banane</span><span class="menu-item-price">2 300 F</span></div>
+        </div>
+    </div>
+
+    <!-- Cocktails -->
+    <div class="menu-panel" id="panel-cocktails">
+        <div class="menu-grid">
+            <div class="menu-item"><span class="menu-item-name">Cocktail Ali Baba</span><span class="menu-item-price">3 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Virginie Mojito</span><span class="menu-item-price">1 500 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Copacabana</span><span class="menu-item-price">2 000 F</span></div>
+            <div class="menu-item"><span class="menu-item-name">Appa</span><span class="menu-item-price">2 000 F</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GALERIE ===== -->
+<section id="galerie">
+    <div class="section-header">
+        <span class="section-label" data-fr="Découvrez notre espace" data-wo="Xool sa defar bi">Découvrez notre espace</span>
+        <h2 class="section-title" data-fr="Notre <em>Galerie</em>" data-wo="Xët <em>Yi</em>">Notre <em>Galerie</em></h2>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Salle du restaurant Les Délices de Coura National">
+            <div class="gallery-overlay"><span data-fr="Notre salle" data-wo="Àddina bi">Notre salle</span></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" alt="Burger Les Délices">
+            <div class="gallery-overlay"><span data-fr="Nos burgers" data-wo="Burger yi">Nos burgers</span></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" alt="Pizza Les Délices">
+            <div class="gallery-overlay"><span data-fr="Nos pizzas" data-wo="Pizza yi">Nos pizzas</span></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=500&q=80" alt="Brochettes Les Délices">
+            <div class="gallery-overlay"><span data-fr="Nos brochettes" data-wo="Brochette yi">Nos brochettes</span></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&q=80" alt="Desserts Les Délices">
+            <div class="gallery-overlay"><span data-fr="Nos desserts" data-wo="Dessert yi">Nos desserts</span></div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&q=80" alt="Ambiance Les Délices de Coura">
+            <div class="gallery-overlay"><span data-fr="Notre ambiance" data-wo="Jàmm ak neex">Notre ambiance</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+    <div class="section-header">
+        <span class="section-label" data-fr="Venez nous voir" data-wo="Kaay gis nu">Venez nous voir</span>
+        <h2 class="section-title" data-fr="Nous <em>Trouver</em>" data-wo="Dem ci <em>Suuf</em>">Nous <em>Trouver</em></h2>
+        <div class="section-line"></div>
+    </div>
+
+    <div class="contact-wrap">
+        <div class="contact-info">
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <div>
+                    <div class="contact-label" data-fr="Adresse" data-wo="Adresse">Adresse</div>
+                    <div class="contact-value">Parcelle U2, Thiès, Sénégal</div>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <div>
+                    <div class="contact-label" data-fr="Téléphone" data-wo="Telefon">Téléphone</div>
+                    <div class="contact-value"><a href="tel:+221778837014">77 883 70 14</a></div>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🍽️</div>
+                <div>
+                    <div class="contact-label" data-fr="Services" data-wo="Sëriñ yi">Services</div>
+                    <div class="contact-value" data-fr="Restaurant & Traiteur" data-wo="Restoran ak Traiteur">Restaurant & Traiteur</div>
+                </div>
+            </div>
+
+            <a href="https://wa.me/221778837014" class="wa-btn" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                <span data-fr="Réserver sur WhatsApp" data-wo="Dugal sa tur ci WhatsApp">Réserver sur WhatsApp</span>
+            </a>
+        </div>
+
+        <div class="contact-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2000!2d-16.927515!3d14.770080!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2ssn!4v1"
+                allowfullscreen=""
+                loading="lazy"
+                title="Localisation Les Délices de Coura National, Thiès">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>© 2026 <strong>Les Délices de Coura National</strong> · Thiès, Sénégal</p>
+    <p style="margin-top:0.5rem;opacity:0.45;" data-fr="Tous droits réservés · 77 883 70 14" data-wo="Jërejëf ci yëen · 77 883 70 14">Tous droits réservés · 77 883 70 14</p>
+    <p style="margin-top:0.8rem;opacity:0.35;font-size:0.72rem;" id="visit-counter"></p>
+</footer>
+
+<script>
+    // ===== LANGUAGE TOGGLE =====
+    function setLang(lang) {
+        document.querySelectorAll('.lang-btn').forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+        document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
+
+        document.querySelectorAll('[data-fr]').forEach(function(el) {
+            var text = el.getAttribute('data-' + lang);
+            if (!text) return;
+            var isHeading = el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3';
+            if (isHeading) {
+                el.innerHTML = text;
+            } else {
+                el.textContent = text;
+            }
+        });
+    }
+
+    // ===== MENU TABS =====
+    function showTab(event, tabId) {
+        document.querySelectorAll('.menu-panel').forEach(function(p) {
+            p.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-btn').forEach(function(b) {
+            b.classList.remove('active');
+        });
+        document.getElementById('panel-' + tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+
+    // ===== MOBILE MENU =====
+    function toggleMobile() {
+        document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    // ===== VISIT COUNTER =====
+    fetch('https://api.counterapi.dev/v1/lesdelicesdecoura/visits/hit')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (data && data.count) {
+                document.getElementById('visit-counter').textContent = '👁 ' + data.count.toLocaleString() + ' visites';
+            }
+        })
+        .catch(function() {});
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        var menu = document.getElementById('mobileMenu');
+        var hamburger = document.querySelector('.nav-hamburger');
+        if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+            menu.classList.remove('open');
+        }
+    });
+</script>
+
+</body>
+</html>
